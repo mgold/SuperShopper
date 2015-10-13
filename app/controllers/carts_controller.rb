@@ -13,9 +13,6 @@ class CartsController < ApplicationController
     items.each do |k, v|
       CartItem.create(cart: cart, item: k[item_prefix.length..-1].to_i, number: k.to_i)
     end
-    puts "+++++++++++++++++++++++++++++++"
-    puts "Created #{items.length} new cart items"
-    puts "==============================="
   end
 
   def item_prefix
