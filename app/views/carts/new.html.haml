@@ -3,6 +3,6 @@
 %form{action: carts_url, method: :post}
   - @items.each do |item|
     =item.name
-    %input{name: item.name, value: 0}
+    %input{name: "#{controller.item_prefix}#{item.id}", value: 0}
     %br
   %input{type: :submit, value: "Submit"}
