@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+unless Rails.env.production?
+  %w(Milk Egg Bread Cheese Tomato Onion Mushrooms Avocado Pumpkin).each do |name|
+    Item.create!(name: name)
+  end
+end
