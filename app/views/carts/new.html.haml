@@ -1,0 +1,8 @@
+%h1 Super Shopper
+
+%form{action: carts_url, method: :post}
+  - @items.each do |item|
+    =item.name
+    %input{name: item.name, value: 0}
+    %br
+  %input{type: :submit, value: "Submit"}
